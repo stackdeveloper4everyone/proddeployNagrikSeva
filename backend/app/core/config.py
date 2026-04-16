@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     app_env: str = "development"
     debug: bool = True
     host: str = "0.0.0.0"
-    port: int = 8000
+    port: int = Field(default=8000)
     api_prefix: str = "/api"
 
     sarvam_api_key: str = Field(default="")
