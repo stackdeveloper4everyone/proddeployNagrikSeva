@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NagrikMitra</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span>
+          </div>
+          <div class="brand-copy">
+            <h1>NagrikMitra</h1>
+          </div>
+        </div>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="#assistantSection">Assistant</a>
+          <a href="#recentPoliciesSection">Recent Policies</a>
+          <a href="#aboutSection">About</a>
+        </nav>
+        <div class="header-ctas">
+          <a class="cta-btn ghost" href="#aboutSection">How It Works</a>
+          <a class="cta-btn solid" href="#assistantSection">Start Chat</a>
+        </div>
+      </header>
+
+      <section id="aboutSection" class="hero-panel">
+        <div class="hero-copy">
+          <p class="hero-kicker">Fast, Clear, and Reliable</p>
+          <h2>Discover policy support with a clean and guided experience</h2>
+          <p>
+            Ask questions in your preferred language, view trusted references, and keep track of recently viewed
+            policies in one place.
+          </p>
+        </div>
+        <div class="hero-highlights">
+          <article class="highlight-card">
+            <h3>Trusted Sources</h3>
+            <p>Responses are grounded in official policy references whenever available.</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Language Aware</h3>
+            <p>Designed to support multilingual interaction for inclusive access.</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Practical Guidance</h3>
+            <p>Focused on actionable next steps, not just generic descriptions.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <section id="assistantSection" class="chat-card">
+          <header class="chat-header">
+            <h2>Assistant</h2>
+            <label class="language-picker">
+              <span>Language</span>
+              <select id="language">
+                <option value="auto">Auto detect</option>
+                <option value="en-IN">English</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="ta-IN">Tamil</option>
+                <option value="te-IN">Telugu</option>
+                <option value="kn-IN">Kannada</option>
+                <option value="ml-IN">Malayalam</option>
+                <option value="mr-IN">Marathi</option>
+                <option value="gu-IN">Gujarati</option>
+                <option value="bn-IN">Bengali</option>
+                <option value="pa-IN">Punjabi</option>
+                <option value="od-IN">Odia</option>
+              </select>
+            </label>
+          </header>
+
+          <div id="chatLog" class="chat-log" aria-live="polite">
+            <article class="message assistant">
+              <div class="bubble">
+                <p>Tell me what you need help with.</p>
+              </div>
+            </article>
+          </div>
+
+          <form id="chatForm" class="composer">
+            <textarea
+              id="messageInput"
+              rows="2"
+              maxlength="2000"
+              placeholder="Type your question..."
+              required
+            ></textarea>
+            <div class="composer-actions">
+              <div class="voice-controls">
+                <button type="button" id="recordButton" class="voice-btn">Voice Input</button>
+                <label class="autoplay-toggle">
+                  <input type="checkbox" id="autoSpeakToggle" />
+                  <span>Auto speak</span>
+                </label>
+              </div>
+              <button type="submit" id="sendButton">Send</button>
+            </div>
+          </form>
+        </section>
+
+        <aside id="recentPoliciesSection" class="sidebar-card" aria-label="Recently viewed policies">
+          <div class="sidebar-head">
+            <h2>Recently Viewed Policies</h2>
+            <button type="button" id="clearRecentPoliciesBtn" class="clear-recent-btn">Clear</button>
+          </div>
+          <ul id="recentPoliciesList" class="recent-policy-list">
+            <li class="empty-policy-item">No policies viewed yet.</li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/app.js?v=20260415-3"></script>
+  </body>
+  </html>
